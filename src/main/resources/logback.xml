@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration  scan="true" scanPeriod="60 seconds" packagingData="true">
+
+	<appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-5p %d{dd/MM/yyyy HH:mm:ss} \(%logger{15}\): %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SQLConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%n{}SQL: %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ParamConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>  -> %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="br.com.infotech" level="DEBUG" />
+	
+	<!-- Logger para SQL -->
+	<logger name="org.hibernate.SQL" level = "INFO" additivity="false">
+		<appender-ref ref="SQLConsoleAppender" />
+		<!-- <appender-ref ref="SQLFileAppender" /> -->
+	</logger>
+	
+	<!-- Logger para Parâmetros dos SQL -->
+	<logger name="org.hibernate.type" level="INFO" additivity="false">
+		<appender-ref ref="ParamConsoleAppender" />
+		<!-- <appender-ref ref="ParamFileAppender" /> -->
+	</logger>
+	
+	<logger name="org.springframework" level="INFO" />
+	
+	<root level="INFO">
+		<appender-ref ref="ConsoleAppender" />
+	</root>
+</configuration>

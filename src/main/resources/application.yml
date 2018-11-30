@@ -1,0 +1,51 @@
+server:
+  context-path: /bpmn
+  port: 9090
+  address: 0.0.0.0
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:tm;DB_CLOSE_ON_EXIT=FALSE
+    username: database
+    password: database
+    driverClassName: org.h2.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    minimum-idle: 1
+    minimum-pool-size: 5
+    maximum-pool-size: 20
+    hikari:
+      pool-name: SpringBootHikariCP
+      connection-test-query: SELECT 1 FROM DUAL
+      maximum-pool-size: 4
+      minimum-idle: 1
+      connection-timeout: 10000
+      idle-timeout: 10000
+  
+  activityDatasource:
+    url: jdbc:h2:mem:tm;DB_CLOSE_ON_EXIT=FALSE
+    username: database
+    password: database
+    driverClassName: org.h2.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    minimum-idle: 1
+    minimum-pool-size: 5
+    maximum-pool-size: 20
+    hikari:
+      pool-name: SpringBootHikariCP
+      connection-test-query: SELECT 1 FROM DUAL
+      maximum-pool-size: 4
+      minimum-idle: 1
+      connection-timeout: 10000
+      idle-timeout: 10000
+
+  jackson:
+    serialization-inclusion: NON_NULL
+    serialization:
+      fail-on-empty-beans: false
+      write_dates_as_timestamps: false
+      
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+  resources:
+    add-mappings: false      
