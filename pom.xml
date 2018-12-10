@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -18,10 +19,15 @@
 
 	<properties>
 		<main.basedir>${basedir}/../..</main.basedir>
-		<activiti.version>5.22.0</activiti.version>
+		<activiti.version>6.0.0</activiti.version>
 	</properties>
 
 	<repositories>
+		<repository>
+			<id>alfresco</id>
+			<name>alfresco</name>
+			<url>http://maven.alfresco.com/nexus/content/repositories/activiti/</url>
+		</repository>
 		<repository>
 			<id>clojars</id>
 			<name>Clojars repository</name>
@@ -58,19 +64,13 @@
 			<version>0.7.5</version>
 		</dependency>
 
-		<!-- MySQL JDBC -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-
 		<!-- Pool HikariCP -->
 		<dependency>
 			<groupId>hikari-cp</groupId>
 			<artifactId>hikari-cp</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-		
+
 		<!-- H2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>

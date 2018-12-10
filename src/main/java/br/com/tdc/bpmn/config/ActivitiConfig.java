@@ -41,7 +41,6 @@ public class ActivitiConfig {
         result.setDataSource(activitiDataSource);
         result.setDatabaseSchemaUpdate("true");
         result.setTransactionManager(transactionManager);
-        result.setJobExecutorActivate(false);
         List<Resource> lResources = getProcessResources();
         Resource[] resources = lResources.toArray(new Resource[lResources.size()]);
         result.setDeploymentResources(resources);

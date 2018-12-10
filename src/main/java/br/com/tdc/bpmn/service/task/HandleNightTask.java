@@ -10,7 +10,7 @@ public class HandleNightTask implements JavaDelegate {
 	private Logger log = LoggerFactory.getLogger(HandleNightTask.class);
 
 	@Override
-	public void execute(DelegateExecution execution) throws Exception {
+	public void execute(DelegateExecution execution) {
 
 		log.info("Iniciando task HandleNightTask. Variáveis presentes: " + execution.getVariables().toString());
 

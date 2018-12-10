@@ -20,7 +20,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="br.com.infotech" level="DEBUG" />
+	<logger name="br.com.tdc" level="DEBUG" />
 	
 	<!-- Logger para SQL -->
 	<logger name="org.hibernate.SQL" level = "INFO" additivity="false">
@@ -36,7 +36,7 @@
 	
 	<logger name="org.springframework" level="INFO" />
 	
-	<root level="INFO">
+	<root level="DEBUG">
 		<appender-ref ref="ConsoleAppender" />
 	</root>
 </configuration>

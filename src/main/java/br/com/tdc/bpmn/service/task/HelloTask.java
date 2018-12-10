@@ -10,7 +10,7 @@ public class HelloTask implements JavaDelegate {
 	private Logger log = LoggerFactory.getLogger(HelloTask.class);
 
 	@Override
-	public void execute(DelegateExecution execution) throws Exception {
+	public void execute(DelegateExecution execution) {
 
 		log.info("Iniciando task HelloTask. Variáveis presentes: " + execution.getVariables().toString());
 

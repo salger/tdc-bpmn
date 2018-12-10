@@ -10,7 +10,7 @@ public class HandleDayTask implements JavaDelegate {
 	private Logger log = LoggerFactory.getLogger(HandleDayTask.class);
 
 	@Override
-	public void execute(DelegateExecution execution) throws Exception {
+	public void execute(DelegateExecution execution) {
 
 		log.info("Iniciando task HandleDayTask. Variáveis presentes: " + execution.getVariables().toString());
 
